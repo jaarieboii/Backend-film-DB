@@ -4,22 +4,12 @@ namespace App\Http\Controllers;
 
 use App\film;
 use Illuminate\Http\Request;
-use Illuminate\Support\facades\Auth;
 use App\Rules\ValidImage;
 
 
 class FilmController extends Controller
 {
-    // public function __construct()
-    // {   
-        
 
-    //     //if(Auth::check() && Auth::user()->user_id == '2'){ 
-    //     $this->middleware('auth', ['except'=>'index']);
-    //     //} else {
-    //         //return redirect('home');
-    //     //}
-    // }
 
     /**
      * Display a listing of the resource.
