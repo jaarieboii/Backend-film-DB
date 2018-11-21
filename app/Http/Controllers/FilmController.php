@@ -16,11 +16,17 @@ class FilmController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $films = Film::all();
+        $films = Film::filter($request)->get();
         return view('films/welcome', compact('films'));
+    }
+
+    public function indexFilter(Request $request)
+    {
+        //
+        
     }
 
     /**

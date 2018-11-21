@@ -9,6 +9,11 @@
                         
                             <div class="col-md-8">
                                 Filter: 
+                                <select>
+                                 @foreach ($films as $film)
+                                <option value="{{$film->genres}}">{{$film->genres}}</option>  
+                                 @endforeach   
+                                </select>
                             </div>
                         </div>
                     </div>
