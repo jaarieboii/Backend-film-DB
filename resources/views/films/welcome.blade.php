@@ -10,8 +10,8 @@
                             <div class="col-md-8">
                                 Filter: 
                                 <select>
-                                 @foreach ($films as $film)
-                                <option value="{{$film->genres}}">{{$film->genres}}</option>  
+                                 @foreach ($genres as $genre)
+                                <option value="{{$genre->id}}"><li><a href="/?genres={{$genre->naam}}">{{$genre->naam}}<li></option>  
                                  @endforeach   
                                 </select>
                             </div>

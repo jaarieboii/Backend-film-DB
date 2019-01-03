@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\film;
+use App\Genre;
 use Illuminate\Http\Request;
 use App\Rules\ValidImage;
 
@@ -16,17 +17,29 @@ class FilmController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function index(Request $request)
+    // {
+    //     //
+    //     $genres = Genre::all();
+    //     $films = Film::filter($request)->get();
+    //     return view('films/welcome')->with('films', $films)->with('genres', $genres);
+    // }
+
     public function index(Request $request)
     {
-        //
-        $films = Film::filter($request)->get();
-        return view('films/welcome', compact('films'));
-    }
+        $genres = Genre::all();
+        if (request()->has('genres')){
+            $films = Film::where('genres', request('genres'))->get();
+            //dd(request('genres'));
+        }
+        // if (request()->has('sort')){
+            
+        // }
+        else{
+            $films = Film::all();
+        }
 
-    public function indexFilter(Request $request)
-    {
-        //
-        
+        return view('films/welcome')->with('films', $films)->with('genres', $genres);
     }
 
     /**
