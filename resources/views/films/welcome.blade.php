@@ -11,7 +11,7 @@
                                 Filter: 
                                 <select>
                                  @foreach ($genres as $genre)
-                                <option value="{{$genre->id}}"><li><a href="/?genres={{$genre->naam}}">{{$genre->naam}}<li></option>  
+                                <option value="{{$genre->id}}">{{$genre->naam}}</option>  
                                  @endforeach   
                                 </select>
                             </div>
