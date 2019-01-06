@@ -12,4 +12,11 @@ class film extends Model
     {
         return (new FilmFilter($request))->filter($builder);
     }
+
+    public function scopeSearch($query, $s)
+    {
+        return $query->where('naam', 'like', '%' .$s. '%')
+            ->orWhere('genres', 'like', '%' .$s. '%');
+            //->orWhere('description', 'like', '%' .$s. '%');
+    }
 }
