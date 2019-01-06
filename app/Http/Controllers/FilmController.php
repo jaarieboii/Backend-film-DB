@@ -27,6 +27,7 @@ class FilmController extends Controller
 
     public function index(Request $request)
     {
+        $s = $request->input('s');
         $genres = Genre::all();
         if (request()->has('genres')){
             $films = Film::where('genres', request('genres'))->get();
@@ -39,7 +40,7 @@ class FilmController extends Controller
             $films = Film::all();
         }
 
-        return view('films/welcome')->with('films', $films)->with('genres', $genres);
+        return view('films/welcome',compact('films', 'genres', 's'));
     }
 
     /**

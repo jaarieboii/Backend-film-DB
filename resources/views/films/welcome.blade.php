@@ -5,15 +5,25 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-md-4">Filmprogramma</div>
+                            <div class="col-md-2">Filmprogramma</div>
                         
-                            <div class="col-md-8">
+                            <div class="col-md-2">
                                 Filter: 
                                 <select>
                                  @foreach ($genres as $genre)
                                 <option value="{{$genre->id}}">{{$genre->naam}}</option>  
                                  @endforeach   
                                 </select>
+                            </div>
+                            <div class="col-md-8"> 
+                            <form action="" method="get" class="form-inline">
+                                <div class="form-group"> 
+                                    <input type="text" name="s" class="form-control" value="{{ isset($s) ? $s : '' }}" placeholder="Search on fields">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary" type="submit" style="padding: 0.375rem 0.75rem !important;">Search</button>
+                                </div>
+                            </form>
                             </div>
                         </div>
                     </div>
@@ -34,7 +44,6 @@
                         </div> 
                         @endforeach
                     </div>
-                        
                     </div>
                 </div>
             </div>
