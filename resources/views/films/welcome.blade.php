@@ -16,13 +16,14 @@
                                 </select>
                             </div>
                             <div class="col-md-8"> 
-                            <form action="" method="get" class="form-inline">
+                            <form action="/films" method="get" class="form-inline">
                                 <div class="form-group"> 
                                     <input type="text" name="s" class="form-control" value="{{ isset($s) ? $s : '' }}" placeholder="Search on fields">
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary" type="submit" style="padding: 0.375rem 0.75rem !important;">Search</button>
                                 </div>
+                                {{ csrf_field() }}
                             </form>
                             </div>
                         </div>
@@ -45,6 +46,7 @@
                         @endforeach
                     </div>
                     </div>
+                    {{$films->appends(['s' => $s])->links()}}
                 </div>
             </div>
         </div>

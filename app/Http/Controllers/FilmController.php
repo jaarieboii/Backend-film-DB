@@ -29,15 +29,15 @@ class FilmController extends Controller
     {
         $s = $request->input('s');
         $genres = Genre::all();
-        if (request()->has('genres')){
-            $films = Film::where('genres', request('genres'))->get();
+        if ($request->has('genres')){
+            $films = Film::where('genres', request('genres'))->paginate(10);
             //dd(request('genres'));
         }
         // if (request()->has('sort')){
             
         // }
         else{
-            $films = Film::all();
+            $films = Film::search($s)->paginate(10);
         }
 
         return view('films/welcome',compact('films', 'genres', 's'));
