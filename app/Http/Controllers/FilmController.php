@@ -37,7 +37,7 @@ class FilmController extends Controller
             
         // }
         else{
-            $films = Film::search($s)->paginate(10);
+            $films = Film::search($s)->paginate(9);
         }
 
         return view('films/welcome',compact('films', 'genres', 's'));
