@@ -7,15 +7,21 @@
                         <div class="row">
                             <div class="col-md-2">Filmprogramma</div>
                         
-                            <div class="col-md-2">
-                                Filter: 
-                                <select>
-                                 @foreach ($genres as $genre)
-                                <option value="{{$genre->id}}">{{$genre->naam}}</option>  
-                                 @endforeach   
-                                </select>
+                            <div class="col-md-3">
+                                <form action="/films" method="get" class="form-inline">
+                                    <div class="form-group">
+                                        <select name="genres" onchange="location = this.value;">
+                                        @foreach ($genres as $genre)
+                                            <option value="{{$genre->naam}}">{{$genre->naam}}</option>  
+                                        @endforeach   
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-primary" type="submit" style="padding: 0.375rem 0.75rem !important;">filter</button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="col-md-8"> 
+                            <div class="col-md-7"> 
                             <form action="/films" method="get" class="form-inline">
                                 <div class="form-group"> 
                                     <input type="text" name="s" class="form-control" value="{{ isset($s) ? $s : '' }}" placeholder="Search on fields">

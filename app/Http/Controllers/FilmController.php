@@ -29,8 +29,8 @@ class FilmController extends Controller
     {
         $s = $request->input('s');
         $genres = Genre::all();
-        if ($request->has('genres')){
-            $films = Film::where('genres', request('genres'))->paginate(10);
+        if (request()->has('genres')){
+            $films = Film::where('genres', request('genres'))->paginate(10)->appends('genres', request('genres'));
             //dd(request('genres'));
         }
         // if (request()->has('sort')){
