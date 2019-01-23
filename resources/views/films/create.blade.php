@@ -7,7 +7,7 @@
 <div class="card">
     <div class="card-header">Film toevoegen</div>
     <div class="card-body">
-<form method="post" action="/films" enctype="multipart/form-data">
+<form method="post" action="{{url('/films')}}" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="form-group">
         <label for="filmnaam">Filmnaam</label>

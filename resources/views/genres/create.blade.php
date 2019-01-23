@@ -6,7 +6,7 @@
 <div class="card">
     <div class="card-header">Zaal toevoegen</div>
     <div class="card-body">
-<form method="post" action="/genres" enctype="multipart/form-data">
+<form method="post" action="{{url('/genres')}}" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="form-group">
         <label for="genres">Genre</label>

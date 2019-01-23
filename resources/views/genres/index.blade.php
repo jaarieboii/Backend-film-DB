@@ -14,12 +14,12 @@
               <th scope="row">{{$item->id}}</th>
               <td>{{$item->naam}}</td>
               <td width="10%">
-                  <form action="/genres/{{$item->id}}/edit">
+                  <form action="{{url('/genres/{{$item->id}}/edit')}}">
                   <button type="submit" class="btn btn-primary">Update</button>
                   </form>
               </td>
                 <td width="10%">
-                      <form action="/genres/{{$item->id}}" method="POST">
+                      <form action="{{url('/genres/{{$item->id}}')}}" method="POST">
                           {{ csrf_field() }}
                           {{ method_field('DELETE') }}
                           <button type="submit" class="btn btn-danger">Delete</button>

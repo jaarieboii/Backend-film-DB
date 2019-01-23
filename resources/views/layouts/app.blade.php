@@ -56,7 +56,7 @@
                     <ul class="navbar-nav mr-auto">
 
                         @if(Auth::user())
-                        @if(Auth::user()->user_id == '1')
+                        @if(Auth::user()->user_id == '0')
                             <li class="nav-item">
                                 <a class="nav-link">favorieten</a>
                             </li>
@@ -75,7 +75,7 @@
                                 </li> --}}
                         @endif
 
-                        @if(Auth::user()->user_id == '2')
+                        @if(Auth::user()->user_id == '1')
                         <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Genres <span class="caret"></span>

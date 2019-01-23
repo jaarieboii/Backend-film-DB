@@ -8,7 +8,7 @@
                             <div class="col-md-2">Filmprogramma</div>
                         
                             <div class="col-md-3">
-                                <form action="/films" method="get" class="form-inline">
+                                <form action="{{url('/films')}}" method="get" class="form-inline">
                                     <div class="form-group">
                                         <select name="genres" onchange="location = this.value;">
                                         @foreach ($genres as $genre)
@@ -22,7 +22,7 @@
                                 </form>
                             </div>
                             <div class="col-md-7"> 
-                            <form action="/films" method="get" class="form-inline">
+                            <form action="{{url('/films')}}" method="get" class="form-inline">
                                 <div class="form-group"> 
                                     <input type="text" name="s" class="form-control" value="{{ isset($s) ? $s : '' }}" placeholder="Search on fields">
                                 </div>

@@ -13,11 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    @if(Auth::User()->user_id == '1')
+                    @if(Auth::User()->user_id == '0')
                     Welcome {{Auth::User()->name}}!
                     @endif
                         
-                    @if(Auth::User()->user_id == '2')
+                    @if(Auth::User()->user_id == '1')
                     Welcome admin {{Auth::User()->name}}! 
                     @endif
                     

@@ -20,13 +20,13 @@
               <td>{{$item->email}}</td>
               <td>{{$item->user_id}}</td>
               <td>
-                  @if($item->user_id == '1')
+                  @if($item->user_id == '0')
                     <label class="bs-switch">
                         <input type="checkbox" class="ajaxSubmit">
                         <span class="slider round"></span>
                     </label>
                   @endif
-                  @if($item->user_id == '2')
+                  @if($item->user_id == '1')
                   <label class="bs-switch">
                       <input type="checkbox" class="ajaxSubmit" checked>
                       <span class="slider round"></span>

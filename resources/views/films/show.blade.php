@@ -21,12 +21,12 @@
               <td>{{$item->lengte}}</td>
               <td>{{$item->cover_image}}</td>
               <td>
-                <form action="/films/{{$item->id}}/edit">
+                <form action="{{url('/films/{{$item->id}}/edit')}}">
                 <button type="submit" class="btn btn-primary">Update</button>
                 </form>
             </td>
               <td>
-                    <form action="/films/{{$item->id}}" method="POST">
+                    <form action="{{url('/films/{{$item->id}}')}}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
                         <button type="submit" class="btn btn-danger">Delete</button>
