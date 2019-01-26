@@ -20,27 +20,23 @@
               <td>{{$item->email}}</td>
               <td>{{$item->user_id}}</td>
               <td>
-              <form action="{{action('AdminsController@isAdmin', $item->id)}}" class="form" method="post">
-                {{ csrf_field() }}
-                    @if($item->user_id == '0')
-                    <div class="form-group">
-                        <label class="bs-switch">
-                            <input type="checkbox" class="form-control" name="user_id">
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                    @endif
-                    @if($item->user_id == '1')
-                    <div class="form-group">
-                    <label class="bs-switch">
-                        <input type="checkbox" class="form-control" name="user_id" checked>
-                        <span class="slider round"></span>
-                    </label>
-                    </div>
-                    @endif
-                </form>
-              </td>
               
+                {{ csrf_field() }}
+                @if($item->user_id == '0')
+                    <form action="{{action('AdminsController@isAdmin', $item->id)}}" class="form" method="post">
+                    <div class="form-group">
+                        <button type="button" class="btn-primary form-control" name="user_id">User</button>
+                    </div>
+                    </form>
+                @endif
+                @if($item->user_id == '1')
+                    <form action="{{action('AdminsController@isAdmin', $item->id)}}" class="form" method="post">
+                    <div class="form-group">
+                        <button type="button" class="btn-secondary form-control" name="user_id">Admin</button>
+                    </div>
+                    </form>
+                @endif
+              </td>
               </tr>
     @endforeach
 </tbody>
