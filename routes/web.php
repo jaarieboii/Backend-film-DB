@@ -13,10 +13,10 @@
 
 
 Route::get('/', 'FilmController@index' );
-//Route::group(['middleware' => 'App\Http\Middleware\admin'], function()
-//{
+Route::group(['middleware' => ['auth', 'admin']], function()
+{
 Route::get('/admin', 'AdminsController@index');
-Route::post('/admin/post', 'AdminsController@update');
+Route::post('/admin/{$id}', 'AdminsController@isAdmin');
 
 //Route::post('/films', 'FilmController@update');
 //Route::get('/films/create', 'FilmController@create' );
@@ -32,7 +32,7 @@ Route::resources([
 
 
 ]);
-//});
+});
 
 
 

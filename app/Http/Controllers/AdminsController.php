@@ -75,13 +75,6 @@ class AdminsController extends Controller
      */
     public function update(Request $request)
     {
-        //
-        echo 'test';
-
-        $id = $request->input('id');
-        $user = User::find($id);
-        $user->user_id = $request->user_id;
-        $user->save();
        
     }
 
@@ -94,5 +87,21 @@ class AdminsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function isAdmin($id)
+    {
+        //set an admin or deactive a admin.
+        dd($id);
+        $admin = User::find($id);
+
+        if($admin->user_id === '0'){
+            $admin->user_id = '1';
+            $admin->save();
+        }
+        if($admin->user_id === '1'){
+            $admin->user_id = '0';
+            $admin->save();
+        }
     }
 }

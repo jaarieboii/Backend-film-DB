@@ -16,18 +16,10 @@ class admin
      */
     public function handle($request, Closure $next)
     {
-        // if (Auth::check())
-        // {
-        //     echo 'test';
-        //     // if(Auth::user()->user_id == '1'){
-        //     //     return view('home');
-        //     // }
-        //     //dd($request->user());
-            
-        // } 
-        // // dd($request);
-        // if($request->user_id == '2'){  
-        return $next($request);
-        // }
+       if(Auth::check() && Auth::user()->isadmin()){
+           return $next($request);
+       }
+
+       return redirect('/');
     }
 }
