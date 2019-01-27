@@ -33,6 +33,6 @@ class HomeController extends Controller
     {
     $myFavorites = Auth::user()->favorites;
 
-    return view('users.my_favorites', compact('myFavorites'));
+    return view('favorieten.index', compact('myFavorites'));
     }
 }
