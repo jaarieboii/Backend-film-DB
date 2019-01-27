@@ -46,7 +46,14 @@
                                     
                                 </div>
 
-                                <div class="card-footer">{{$film->lengte}} </div>
+                                @if (Auth::check())
+                                    <div class="card-footer">
+                                        <favorite
+                                            :film={{ $film->id }}
+                                            :favorited={{ $film->favorited() ? 'true' : 'false' }}
+                                        ></favorite>
+                                    </div>
+                                @endif
                             </div>
                         </div> 
                         @endforeach

@@ -4,22 +4,24 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddReservering extends Migration
+class CreateFavoritesTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
+    
     public function up()
     {
-        //
-        Schema::Table('reservering', function (Blueprint $table){
-            $table->string('naam');
-            $table->integer('aantal_kaartjes');
-            $table->string('film'); 
-         });
+        Schema::create('favorites', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('film_id')->unsigned();
+            $table->timestamps();
+        });
     }
+
 
     /**
      * Reverse the migrations.
@@ -28,6 +30,6 @@ class AddReservering extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('favorites');
     }
 }

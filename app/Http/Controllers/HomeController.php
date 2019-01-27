@@ -29,4 +29,10 @@ class HomeController extends Controller
         //dd($id);
         return view('home')->with('test',$id);
     }
+    public function myFavorites()
+    {
+    $myFavorites = Auth::user()->favorites;
+
+    return view('users.my_favorites', compact('myFavorites'));
+    }
 }

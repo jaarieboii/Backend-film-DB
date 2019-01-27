@@ -15,7 +15,7 @@ class AddGenreName extends Migration
     {
         //
         Schema::Table('genres', function (Blueprint $table){
-           $table->string('naam'); 
+           $table->string('test'); 
         });
     }
 

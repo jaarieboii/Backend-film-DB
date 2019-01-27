@@ -30,4 +30,7 @@ class User extends Authenticatable
     public function isAdmin(){
         return $this->user_id;
     }
+    public function favorites(){
+        return $this->belongsToMany(Film::class, 'favorites', 'user_id', 'film_id')->withTimeStamps();
+    }
 }

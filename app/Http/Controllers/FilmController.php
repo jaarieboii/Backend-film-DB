@@ -172,4 +172,12 @@ class FilmController extends Controller
         $film->delete();
         return redirect('films/show');
     }
+    public function favoriteFilm(film $film){
+        Auth::user()->favorites()->attach($film->id);
+        return back();
+    }
+    public function unFavoriteFilm(film $film){
+        Auth::user()->favorites()->detach($film->id);
+        return back();
+    }
 }

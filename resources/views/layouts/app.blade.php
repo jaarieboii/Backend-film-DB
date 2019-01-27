@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 
     <!-- Scripts -->
@@ -58,7 +59,7 @@
                         @if(Auth::user())
                         @if(Auth::user()->user_id == '0')
                             <li class="nav-item">
-                                <a class="nav-link">favorieten</a>
+                                <a class="nav-link" href="{{ url('my_favorites') }}">favorieten</a>
                             </li>
                             {{-- <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
