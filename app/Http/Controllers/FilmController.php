@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\film;
-use App\User;
 use App\Genre;
 use Illuminate\Http\Request;
 use App\Rules\ValidImage;

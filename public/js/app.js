@@ -1793,7 +1793,7 @@ __webpack_require__.r(__webpack_exports__);
     favorite: function favorite(film) {
       var _this = this;
 
-      axios.post('/favorite/' + film).then(function (response) {
+      axios.post('favorite/' + film).then(function (response) {
         return _this.isFavorited = true;
       }).catch(function (response) {
         return console.log(response.data);
@@ -1802,7 +1802,7 @@ __webpack_require__.r(__webpack_exports__);
     unFavorite: function unFavorite(film) {
       var _this2 = this;
 
-      axios.post('/unfavorite/' + film).then(function (response) {
+      axios.post('unfavorite/' + film).then(function (response) {
         return _this2.isFavorited = false;
       }).catch(function (response) {
         return console.log(response.data);
