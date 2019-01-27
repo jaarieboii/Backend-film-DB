@@ -17,8 +17,7 @@
             return {
                 isFavorited: '',
                 
-            },
-            console.log(film)
+            }
         },
 
         mounted() {

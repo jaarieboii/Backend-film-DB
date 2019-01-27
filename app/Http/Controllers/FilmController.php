@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\film;
+use App\Film;
+use App\User;
 use App\Genre;
 use Illuminate\Http\Request;
 use App\Rules\ValidImage;
+//use App\Http\Controllers\Auth;
+
+use Illuminate\Support\Facades\Auth;
 
 
 class FilmController extends Controller
@@ -172,11 +176,13 @@ class FilmController extends Controller
         $film->delete();
         return redirect('films/show');
     }
-    public function favoriteFilm(film $film){
+    public function favoriteFilm(Film $film)
+    {
         Auth::user()->favorites()->attach($film->id);
+
         return back();
     }
-    public function unFavoriteFilm(film $film){
+    public function unFavoriteFilm(Film $film){
         Auth::user()->favorites()->detach($film->id);
         return back();
     }

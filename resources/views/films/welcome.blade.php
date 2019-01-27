@@ -42,7 +42,7 @@
                                 <div class="card-header">{{$film->naam}}</div>
                 
                                 <div class="card-body">
-                                   <img width="100%" src="/storage/cover_images/{{$film->cover_image}}">
+                                   <img width="100%" src="storage/cover_images/{{$film->cover_image}}">
                                     
                                 </div>
 

@@ -24,11 +24,13 @@
                 {{ csrf_field() }}
                     @if($item->user_id == '0')
                     <div class="form-group">
+                        <input type="checkbox" hidden checked>
                         <button type="button" class="btn-primary form-control" name="user_id">User</button>
                     </div>
                     @endif
                     @if($item->user_id == '1')
                     <div class="form-group">
+                        <input type="checkbox" hidden>
                         <button type="button" class="btn-secondary form-control" name="user_id">Admin</button>
                     </div>
                     @endif
