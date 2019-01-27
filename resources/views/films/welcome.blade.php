@@ -43,10 +43,9 @@
                 
                                 <div class="card-body">
                                    <img width="100%" src="storage/cover_images/{{$film->cover_image}}">
-                                    
                                 </div>
 
-                                @if (Auth::check())
+                                @if (Auth::check() && Auth::user()->times_logged_in == 5)
                                     <div class="card-footer">
                                         <favorite
                                             :film={{ $film->id }}

@@ -26,7 +26,7 @@
                     @endif
                 </div>
             @empty
-                <p>You have no favorite posts.</p>
+                <p>You have no favorite films.</p>
             @endforelse
          </div>
     </div>
