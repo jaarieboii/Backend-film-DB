@@ -16,8 +16,9 @@ Route::get('/', 'FilmController@index' );
 Route::group(['middleware' => ['auth', 'admin']], function()
 {
 Route::get('/admin', 'AdminsController@index');
-Route::post('/admin', 'AdminsController@isAdmin');
 
+Route::post('/admin/isnotadmin/{id}', 'AdminsController@isNotAdmin');
+Route::post('/admin/isadmin/{id}', 'AdminsController@makeAdmin');
 //Route::post('/films', 'FilmController@update');
 //Route::get('/films/create', 'FilmController@create' );
 
@@ -37,8 +38,8 @@ Route::resources([
 
 
 Auth::routes();
-Route::post('favorite/{film}', 'FilmController@favoriteFilm');
-Route::post('unfavorite/{film}', 'FilmController@unFavoriteFilm');
+Route::post('/favorite/{film}', 'FilmController@favoriteFilm');
+Route::post('/unfavorite/{film}', 'FilmController@unFavoriteFilm');
 
 Route::get('my_favorites', 'HomeController@myFavorites')->middleware('auth');
 Route::get('/home', 'HomeController@index')->name('home');

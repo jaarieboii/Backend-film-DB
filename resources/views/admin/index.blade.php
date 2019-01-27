@@ -20,21 +20,23 @@
               <td>{{$item->email}}</td>
               <td>{{$item->user_id}}</td>
               <td>
-              <form action="{{action('AdminsController@isAdmin', $item->id)}}" class="form" method="post">
-                {{ csrf_field() }}
+              
                     @if($item->user_id == '0')
+                    <form action="{{action('AdminsController@makeAdmin', $item->id)}}" class="form-inline" method="POST">
+                        {{  csrf_field() }}
                     <div class="form-group">
-                        <input type="checkbox" hidden checked>
-                        <button type="button" class="btn-primary form-control" name="user_id">User</button>
+                    <button type="submit" class="btn-primary form-control">User</button>
                     </div>
+                </form>
                     @endif
                     @if($item->user_id == '1')
-                    <div class="form-group">
-                        <input type="checkbox" hidden>
-                        <button type="button" class="btn-secondary form-control" name="user_id">Admin</button>
+                    <form action="{{action('AdminsController@isNotAdmin', $item->id)}}" class="form-inline" method="POST" >
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                        <button type="submit" class="btn-secondary form-control">Admin</button>
                     </div>
-                    @endif
                 </form>
+                    @endif
               </td>
               
               </tr>

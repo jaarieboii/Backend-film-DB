@@ -89,19 +89,20 @@ class AdminsController extends Controller
         //
     }
 
-    public function isAdmin($id)
+    public function makeAdmin($id)
     {
         //set an admin or deactive a admin.
-        dd($id);
-        $admin = User::find($id);
-
-        if($admin->user_id === '0'){
-            $admin->user_id = '1';
-            $admin->save();
-        }
-        if($admin->user_id === '1'){
-            $admin->user_id = '0';
-            $admin->save();
-        }
+            
+            $id = User::find($id);
+            $id->user_id = 1;
+            $id->save();
+            return redirect('/admin');
+    }
+    public function isNotAdmin($id)
+    { 
+        $id = User::find($id);
+        $id->user_id = 0;
+        $id->save();
+        return redirect('/admin');
     }
 }
