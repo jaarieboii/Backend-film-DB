@@ -33,13 +33,13 @@
 
         methods: {
             favorite(film) {
-                axios.post('/favorite/'+film)
+                axios.post('favorite/'+film)
                     .then(response => this.isFavorited = true)
                     .catch(response => console.log(response.data));
             },
 
             unFavorite(film) {
-                axios.post('/unfavorite/'+film)
+                axios.post('unfavorite/'+film)
                     .then(response => this.isFavorited = false)
                     .catch(response => console.log(response.data));
             }

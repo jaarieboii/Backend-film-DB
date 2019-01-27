@@ -117,6 +117,6 @@ class GenreController extends Controller
         //
         $genre = Genre::find($genres);
         $genre->delete();
-        return redirect('genres/index');
+        return redirect('genres');
     }
 }

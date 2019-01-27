@@ -10,7 +10,7 @@
                             <div class="col-md-3">
                                 <form action="{{url('/films')}}" method="get" class="form-inline">
                                     <div class="form-group">
-                                        <select name="genres" onchange="location = this.value;">
+                                        <select name="genres">
                                         @foreach ($genres as $genre)
                                             <option value="{{$genre->naam}}">{{$genre->naam}}</option>  
                                         @endforeach   
